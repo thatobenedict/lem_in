@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   admin.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/18 10:26:27 by tbenedic         ###   ########.fr       */
+/*   Created: 2018/09/18 09:11:01 by tbenedic          #+#    #+#             */
+/*   Updated: 2018/09/18 10:05:34 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem.h"
-
-int		parse_data()
+void		ft_initial(t_lem *lem)
 {
-
+	lem->gnl.line = 0;
 }
 
-
-int		main(int argc, char **argv)
+void		duplicate(t_lem *lem)
 {
-	t_lem	lem;
-
-	lem	= ft_memalloc(sizeof(t_lem));
-	ft_initial(lem);
-
-	
 }
