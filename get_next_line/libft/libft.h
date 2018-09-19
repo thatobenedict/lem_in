@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 10:48:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/14 14:02:13 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/19 17:10:11 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ int					ft_abs(int a);
 int					ft_absdiff(int a, int b);
 int					is_between(int a, int b, int c);
 int					ft_isempty(char *s);
+int					ft_strlen_n(const char *s, int n);
 #endif

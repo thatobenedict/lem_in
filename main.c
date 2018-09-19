@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/19 13:49:18 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/19 17:54:41 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int		main(int argc, char **argv)
 	parse_data(lem);
 	//===================
 	ft_putnbr(lem->ants);
+	ft_putstr("\n");
+	//===================
+	ft_putstr(lem->start);
+	ft_putstr("\n");
+	//===================
+	ft_putstr(lem->end);
 	ft_putstr("\n");
 	//===================
 	ft_puttab(lem->hold);

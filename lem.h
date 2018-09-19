@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/19 10:20:41 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/19 17:54:43 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ typedef struct	s_room
 {
 	int			top;
 	char		**array;
-	//char		*name;
-	//int		id;
-	char		*end;
 	int			size;
 }				t_room;
 
@@ -66,6 +63,8 @@ typedef	struct	s_lem
 	int				ac;
 	char			**av;
 	char			**hold;
+	char			*start;
+	char			*end;
 	int				hold_size;
 }				t_lem;
 #endif
