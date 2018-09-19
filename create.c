@@ -6,9 +6,11 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 10:05:41 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/18 16:45:04 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/19 08:18:16 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "lem.h"
 
 t_stack		*new_stack(size_t size)
 {

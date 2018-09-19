@@ -6,15 +6,14 @@
 #    By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/18 18:18:38 by tbenedic          #+#    #+#              #
-#    Updated: 2018/09/18 18:24:40 by tbenedic         ###   ########.fr        #
+#    Updated: 2018/09/19 09:06:43 by tbenedic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lem-in
 
 SRC = $(addsuffix .c, $(FUNC))
-FUNC = main stack_basics display admin operations1 operations2 \
-		operations3 operations_inline get_next_line/get_next_line
+FUNC = admin create display main parse get_next_line/get_next_line
 LIBFT = get_next_line/libft/libft.a
 HEAD  = lem.h
 
