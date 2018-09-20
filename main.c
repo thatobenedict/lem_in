@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/19 17:54:41 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 10:22:25 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ int		main(int argc, char **argv)
 	//===================
 	ft_puttab(lem->hold);
 	//===================
+	ft_putstr("Check the index\n");
+	ft_putstr(lem->hold[0]);
+	ft_putstr("\n");
+	ft_putstr(lem->hold[5]);
+	ft_putstr("\n");
+
+
 }

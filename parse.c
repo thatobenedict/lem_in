@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/19 17:54:39 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 10:22:22 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,16 @@ void		parse_data(t_lem *lem)
 	}
 }
 
-
-
-void	room_stack()
+void	room_stack(t_lem *lem)
 {
+	int i;
+
+	i = 0;
+	l->room->array = (char **)malloc(sizeof(char *) * (_g_room + 3));
+	l->room->array[0] = ft_strdup(lem->start);
+	while (++i < _g_room)
+	{
+		l->room->array[i] = ft_strdup(lem)
+	}
 
 }
