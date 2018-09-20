@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 16:13:44 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 18:36:44 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,12 @@
 # define LEM_H
 # include "get_next_line/get_next_line.h"
 
-typedef struct  s_cord
-{
-	char		*x;
-	char		*y;
-}				t_cord;
-
 typedef struct	s_stack
 {
 	int			top;
 	int			*array;
 	int			size;
 }				t_stack;
-
-typedef struct	s_cordstack
-{
-	int			top;
-	t_cord		*cord;
-	int			size;
-}				t_cordstack;
 
 typedef struct	s_room
 {
@@ -57,7 +44,7 @@ typedef struct	s_gnl
 typedef	struct	s_lem
 {
 	t_room			*room;
-	t_cordstack		*relations;
+	t_room			*relations;
 	t_stack			*route;
 	t_map			*map;
 	t_gnl			gnl;

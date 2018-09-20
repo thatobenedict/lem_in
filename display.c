@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 16:13:42 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 18:36:42 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,15 @@ void	display_map(t_lem *lem)
 		{
 			ft_putchar('\t');
 			//get ready to insert matrix adjust func
+			ft_putnbr_fd(j ,2); //delete
+			ft_putchar_fd('\t', 2); //delete
+			ft_putnbr_fd(k ,2); //delete
+			ft_putchar_fd('\n', 2); //delete
 			ft_putnbr(0);
+			ft_putchar_fd('\n', 2); // delete
 			k++;
 		}
-	ft_putchar('\n');
+		ft_putchar('\n');
 		j++;
 	}
 }

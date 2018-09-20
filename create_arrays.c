@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:54:18 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 16:13:39 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 18:36:38 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ t_map		*new_map(size_t size)
 	lem->array = (int **)ft_memalloc(sizeof(int **) * lem->size);
 	return (lem);
 }
-
