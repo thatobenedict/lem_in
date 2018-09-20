@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 10:22:25 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 14:51:39 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int		main(int argc, char **argv)
 	lem->ac = argc;
 	lem->av = argv;
 	parse_data(lem);
-	//===================
+	room_stack(lem);
+	display_map(lem);
+/*	//===================
 	ft_putnbr(lem->ants);
 	ft_putstr("\n");
 	//===================
@@ -38,6 +40,8 @@ int		main(int argc, char **argv)
 	ft_putstr("\n");
 	ft_putstr(lem->hold[5]);
 	ft_putstr("\n");
-
-
+	//==================
+	ft_putstr("Rooms Stack\n");
+	ft_puttab(lem->room->array);
+	ft_putstr("\n");*/
 }

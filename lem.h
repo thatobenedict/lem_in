@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 10:22:28 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 16:13:44 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct	s_room
 typedef struct	s_map
 {
 	int			**array;
+	int			size;
+	int			top;
 }				t_map;
 
 typedef struct	s_gnl
@@ -66,13 +68,15 @@ typedef	struct	s_lem
 	char			*start;
 	char			*end;
 	int				hold_size;
+	int				room_size;
+	int				relations_size;
 }				t_lem;
 #endif
 /*
 ** ======================================================== display.c
 */
 void		display_stack(t_stack *stack);
-void		display_map(t_stack *map);
+void		display_map(t_lem *map);
 /*
 ** ======================================================== admin.c
 */
@@ -92,3 +96,9 @@ int			ret_index(int value, t_stack *stack);
 */
 void		store_data(t_lem *lem);
 void		parse_data(t_lem *lem);
+void		room_stack(t_lem *lem);
+/*
+** ======================================================== create_new_arr.c
+*/
+t_room		*new_room_arr(size_t size);
+t_map		*new_map(size_t size);

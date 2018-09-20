@@ -6,13 +6,11 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 10:22:22 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/20 16:13:37 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem.h"
-int _g_room;
-int	_g_relations;
 
 void		ft_alloc_arr(t_lem *l)
 {
@@ -62,15 +60,17 @@ void		parse_data(t_lem *lem)
 			get_next_line(0, &(lem->gnl.line));
 			lem->end = ft_strsub(lem->gnl.line, 0,
 					ft_strlen_n(lem->gnl.line, ' '));
-			_g_room++;
 		}
 		else if (ft_contain_char(lem->gnl.line, '-') == 1)
 		{
 			ft_alloc_arr(lem);
-			_g_relations++;
+			lem->relations_size++;
 		}
 		else if (ft_contain_char(lem->gnl.line, '#') == 0)
+		{
 			ft_alloc_arr(lem);
+			lem->room_size++;
+		}
 	}
 }
 
@@ -79,11 +79,12 @@ void	room_stack(t_lem *lem)
 	int i;
 
 	i = 0;
-	l->room->array = (char **)malloc(sizeof(char *) * (_g_room + 3));
-	l->room->array[0] = ft_strdup(lem->start);
-	while (++i < _g_room)
-	{
-		l->room->array[i] = ft_strdup(lem)
-	}
-
+	lem->room = new_room_arr((lem->room_size + 3));
+	lem->room->array[0] = ft_strdup(lem->start);
+	while (++i <= lem->room_size)
+		lem->room->array[i] = ft_strdup(lem->hold[i - 1]);
+	lem->room->array[lem->room->size - 2] = ft_strdup(lem->end);
+	lem->room->array[lem->room->size - 1] = 0;
+	
+	lem->map = new_map(lem->room_size + 2);
 }
