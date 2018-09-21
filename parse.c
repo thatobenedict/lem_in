@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 18:36:35 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:45:14 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,12 @@ void	room_stack(t_lem *lem)
 void	relations_stack(t_lem *lem)
 {
 	int i;
+	int j;
 
-	i = lem->relations_size;
-	lem->relations = new_room_arr((lem->relations_size + 1));
-	while (++i <= lem->relations_size)
-		lem->relations->array[i] = ft_strdup(lem->hold[i - 1]);
-	lem->relations->array[lem->relations_size - 2] = ft_strdup(lem->end);
-	lem->relations->array[lem->relations_size - 1] = 0;
-	
-	lem->map = new_map(lem->room_size + 2);
+	i = lem->room_size;
+	j = -1;
+	lem->relations = new_room_arr(lem->relations_size + 1);
+	while (++j < lem->relations_size)
+		lem->relations->array[j] = ft_strdup(lem->hold[i++]);
+	lem->relations->array[lem->relations_size + 1] = 0;
 }

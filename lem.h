@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 18:36:44 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/21 18:37:15 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void		display_map(t_lem *map);
 void		ft_initial(t_lem *lem);
 void		dupe_err(t_lem *lem);
 void		ft_relations(t_lem *lem, int i);
+int			ret_index(char *name, t_room *room);
+int			one_or_zero(int row, int col, t_lem *l);
 /*
 ** ======================================================== create.c
 */
@@ -77,13 +79,14 @@ t_stack		*new_stack(size_t size);
 int			stack_state(t_stack *lem);
 void		push(t_stack *lem, int integer);
 int			pop(t_stack *lem);
-int			ret_index(int value, t_stack *stack);
+//int			ret_index(int value, t_stack *stack);
 /*
 ** ======================================================== parse.c
 */
 void		store_data(t_lem *lem);
 void		parse_data(t_lem *lem);
 void		room_stack(t_lem *lem);
+void		relations_stack(t_lem *lem);
 /*
 ** ======================================================== create_new_arr.c
 */

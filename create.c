@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 10:05:41 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/20 11:52:52 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/21 17:39:06 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			pop(t_stack *lem)
 	return (lem->array[lem->top--]);
 }
 
-int			ret_index(int value, t_stack *stack)
+/*int			ret_index(int value, t_stack *stack)
 {
 	int i;
 
@@ -66,4 +66,4 @@ int			ret_index(int value, t_stack *stack)
 		i++;
 	}
 	return (-1);
-}
+}*/
