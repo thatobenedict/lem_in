@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/21 18:37:15 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 09:42:08 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void		store_data(t_lem *lem);
 void		parse_data(t_lem *lem);
 void		room_stack(t_lem *lem);
 void		relations_stack(t_lem *lem);
+void		pop_map(t_lem *lem);
 /*
 ** ======================================================== create_new_arr.c
 */

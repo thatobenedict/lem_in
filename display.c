@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/21 18:32:38 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 09:13:30 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,8 @@ void	display_map(t_lem *lem)
 		ft_putnbr(j);
 		while (k < (lem->room_size + 2))
 		{
-		//	lem->map->array[j][k] = one_or_zero(j, k, lem);
 			ft_putchar('\t');
-			//get ready to insert matrix adjust func
-			ft_putnbr(j); //delete
-			ft_putchar('\t'); //delete
-			ft_putnbr(k); //delete
-			ft_putchar('\n'); //delete
-			ft_putnbr(0);
-			ft_putchar('\n'); // delete
+			ft_putnbr(lem->map->array[j][k]);
 			k++;
 		}
 		ft_putchar('\n');

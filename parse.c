@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/21 17:45:14 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 09:42:12 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,24 @@ void	relations_stack(t_lem *lem)
 	while (++j < lem->relations_size)
 		lem->relations->array[j] = ft_strdup(lem->hold[i++]);
 	lem->relations->array[lem->relations_size + 1] = 0;
+}
+
+void	pop_map(t_lem *lem)
+{
+	lem->map = new_map((lem->room_size + 2));
+	int j;
+	int k;
+
+	j = -1;
+	while (++j < (lem->room_size + 2))
+	{
+		k = -1;
+		while (++k < (lem->room_size + 2))
+		{
+			if (j == k)
+				lem->map->array[j][k] = 0;
+			else
+				lem->map->array[j][k] = one_or_zero(j, k, lem);
+		}
+	}
 }

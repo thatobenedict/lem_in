@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 11:54:18 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/21 18:32:44 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 09:42:27 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ t_map		*new_map(size_t size)
 {
 	t_map	*lem;
 
+	int i = -1;
 	lem = (t_map*)ft_memalloc(sizeof(t_map));
 	lem->size = size;
 	lem->top = -1;
-	lem->array = (int **)ft_memalloc(sizeof(int **) * lem->size);
+	lem->array = (int **)ft_memalloc(sizeof(int *) * lem->size);
+	while (++i < lem->size)
+		lem->array[i] =(int *)ft_memalloc(sizeof(int) * lem->size);
 	return (lem);
 }
