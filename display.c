@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 09:13:30 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 11:12:50 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ void	display_map(t_lem *lem)
 	i = 0;
 	j = 0;
 	k = 0;
+	ft_putchar(' ');
 	while (i < (lem->room_size + 2))
 	{
-		ft_putchar('\t');
+		ft_putchar(' ');
 		ft_putnbr(i);
 		i++;
 	}
@@ -52,7 +53,7 @@ void	display_map(t_lem *lem)
 		ft_putnbr(j);
 		while (k < (lem->room_size + 2))
 		{
-			ft_putchar('\t');
+			ft_putchar(' ');
 			ft_putnbr(lem->map->array[j][k]);
 			k++;
 		}

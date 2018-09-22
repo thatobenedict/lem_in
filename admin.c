@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 09:11:01 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 09:42:14 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 12:17:07 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,42 @@ int			ret_index(char *name, t_room *room)
 	return (-1);
 }
 
-int			one_or_zero(int row, int col, t_lem *l)
+int			one_or_zero(t_lem *l)//(int row, int col, t_lem *l)
 {
 	int i;
+	int ret;
+	char *room_char1;
+	char *room_char2;
+	int	room1_int;
+	int	room2_int;
 
 	i = -1;
+	ret = 0;
 	while (++i < (l->relations_size))
 	{
-		if (
-				(ft_strncmp(l->room->array[row], l->relations->array[i], ft_strlen_n(l->relations->array[i], '-')) == 0 && ft_strcmp(l->room->array[col], ft_strrchr(l->relations->array[i], '-') + 1) == 0) ||
-				(ft_strncmp(l->room->array[col], l->relations->array[i], ft_strlen_n(l->relations->array[i], '-')) == 0 && ft_strcmp(l->room->array[row], ft_strrchr(l->relations->array[i], '-') + 1) == 0)
-		   )
-			return (1);
+		room_char1 = ft_strndup(l->relations->array[i], ft_strlen_n(l->relations->array[i], '-'));
+		room_char2 = ft_strdup(l->relations->array[i] + ft_strlen_n(l->relations->array[i], '-') + 1);
+		room1_int = ret_index(room_char1, l->room);
+		room2_int = ret_index(room_char2, l->room);
+		l->map->array[room1_int][room2_int] = 1;
+		l->map->array[room2_int][room1_int] = 1;
+	
+	
+	
+		ft_putstr(l->relations->array[i]);
+		ft_putstr("\t");
+//		ft_putstr(room1);
+		ft_putnbr(room1_int);
+		ft_putstr("\t");
+//		ft_putstr(room2);
+		ft_putnbr(room2_int);
+		ft_putstr("\n");
+//		if ((ft_strcmp(l->room->array[row], room1) == 0 && ft_strcmp(l->room->array[col], room2) == 0))
+//			ret = 1;
+//		if ((ft_strcmp(l->room->array[col], room1) == 0 && ft_strcmp(l->room->array[row], room2) == 0))
+//			ret = 1;
 	}
-	return (0);
+	free(room_char1);
+	free(room_char2);
+	return (ret);
 }

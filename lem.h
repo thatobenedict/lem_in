@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 09:42:08 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 12:17:11 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void		ft_initial(t_lem *lem);
 void		dupe_err(t_lem *lem);
 void		ft_relations(t_lem *lem, int i);
 int			ret_index(char *name, t_room *room);
-int			one_or_zero(int row, int col, t_lem *l);
+int			one_or_zero(t_lem *l);//(int row, int col, t_lem *l);
 /*
 ** ======================================================== create.c
 */
