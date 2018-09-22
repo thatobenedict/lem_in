@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 12:17:11 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 15:53:53 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef struct	s_stack
 	int			top;
 	int			*array;
 	int			size;
+	int			tele_row; // future proof - incase of norm
+	int			tele_col; // future proof - incase of norm
 }				t_stack;
 
 typedef struct	s_room
@@ -71,7 +73,7 @@ void		ft_initial(t_lem *lem);
 void		dupe_err(t_lem *lem);
 void		ft_relations(t_lem *lem, int i);
 int			ret_index(char *name, t_room *room);
-int			one_or_zero(t_lem *l);//(int row, int col, t_lem *l);
+void		one_or_zero(t_lem *l);//(int row, int col, t_lem *l);
 /*
 ** ======================================================== create.c
 */
@@ -93,3 +95,7 @@ void		pop_map(t_lem *lem);
 */
 t_room		*new_room_arr(size_t size);
 t_map		*new_map(size_t size);
+/*
+** ======================================================== create_new_arr.c
+*/
+void		teleport(t_lem *lem);

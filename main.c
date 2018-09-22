@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 11:53:42 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 15:53:58 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int argc, char **argv)
 	room_stack(lem);
 	relations_stack(lem);
 	pop_map(lem);
+	lem->route = new_stack(lem->room_size - 1);
 
 //	int i = -1;
 //	while (++i < lem->relations_size)
@@ -36,6 +37,7 @@ int		main(int argc, char **argv)
 //		ft_putstr("\n");
 //	}
 	display_map(lem);
+	teleport(lem);
 //	ft_puttab(lem->hold);
 //	ft_putstr("\nRooms Stack\n");
 //	ft_puttab(lem->room->array);

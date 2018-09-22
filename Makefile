@@ -6,14 +6,14 @@
 #    By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/18 18:18:38 by tbenedic          #+#    #+#              #
-#    Updated: 2018/09/20 12:08:04 by tbenedic         ###   ########.fr        #
+#    Updated: 2018/09/22 12:57:06 by tbenedic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lem-in
 
 SRC = $(addsuffix .c, $(FUNC))
-FUNC = admin create create_arrays display main parse \
+FUNC = admin create create_arrays display main parse algo \
 	   get_next_line/get_next_line
 LIBFT = get_next_line/libft/libft.a
 HEAD  = lem.h

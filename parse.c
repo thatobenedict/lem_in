@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 12:17:09 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/22 13:01:08 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,7 @@ void	pop_map(t_lem *lem)
 	{
 		k = -1;
 		while (++k < (lem->room_size + 2))
-		{
-		//	if (j == k)
 				lem->map->array[j][k] = 0;
-		//	else
-		//		lem->map->array[j][k] = one_or_zero(j, k, lem);
-		}
 	}
 	one_or_zero(lem);
 }
