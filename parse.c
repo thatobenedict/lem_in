@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/25 17:32:40 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/25 18:20:33 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ void		ft_alloc_arr(t_lem *l)
 		l->hold[1] = 0;
 	}
 	l->hold_size++;
+}
+
+void		store_data(t_lem *l)
+{
+
 }
 
 void		parse_data(t_lem *lem)
@@ -85,7 +90,6 @@ void	room_stack(t_lem *lem)
 		lem->room->array[i] = ft_strdup(lem->hold[i - 1]);
 	lem->room->array[lem->room->size - 2] = ft_strdup(lem->end);
 	lem->room->array[lem->room->size - 1] = 0;
-	
 	lem->map = new_map(lem->room_size + 2);
 }
 

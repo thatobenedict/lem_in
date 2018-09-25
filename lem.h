@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/25 17:32:42 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/25 18:20:35 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int			pop(t_stack *lem);
 /*
 ** ======================================================== parse.c
 */
+void		ft_alloc_arr(t_lem *l);
 void		store_data(t_lem *lem);
 void		parse_data(t_lem *lem);
 void		room_stack(t_lem *lem);
