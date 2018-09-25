@@ -71,4 +71,5 @@ void	display_map(t_lem *lem)
 		ft_putchar_fd('\n', 2);
 		j++;
 	}
+ft_putchar_fd('\n', 2);
 }

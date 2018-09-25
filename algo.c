@@ -43,6 +43,37 @@ int		who_max(t_stack *array)
 	}
 	return (j);
 }
+/*
+** Room in this context pertains to the matrix column from the teleport function
+*/
+int		if_push(t_lem *lem, int row, int col)
+{
+	int i;
+
+	i = lem->route->top + 1;
+	while (--i >= 0)
+	{
+		if(lem->route->array[i] == col)
+			return (row);
+	}
+	push(lem->route, col);
+	return (col);
+}
+
+int		if_pop(t_lem *lem)
+{
+	if (lem->route->top == 0)
+	{
+	
+	}
+	while (--i >= 0)
+	{
+		if(lem->route->array[i] == col)
+			return (row);
+	}
+	pop(lem->route);
+	return (col);
+}
 
 void		teleport(t_lem *lem)
 {
@@ -50,19 +81,24 @@ void		teleport(t_lem *lem)
 	int col;
 
 	push(lem->route, 0);
+	display_map(lem);
 	row = -1;
-	while (who_max(lem->route) != ret_index(lem->end, lem->room))//++row <= lem->room_size + 2)
+	while (++row < lem->room_size + 2) //turned this to strictly less than
 	{
+		if_pop(lem->route, col); // this is where a pop would need to occur
 		col = lem->room_size + 2;
+		row = lem->route->array[lem->route->top];
 		while (--col >= 0)
 		{
 			if (lem->map->array[row][col] == 1)
 			{
 				lem->map->array[row][col] = 0;
-				push(lem->route, col);
-				row = col;
+			//	display_map(lem);
+				row = if_push(lem, row, col);
 				lem->map->array[row][col] = 0;
 				display_map(lem);
+				if (row == lem->room_size + 2)
+					exit (0);
 			}
 		}
 	}	

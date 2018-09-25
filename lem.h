@@ -19,8 +19,8 @@ typedef struct	s_stack
 	int			top;
 	int			*array;
 	int			size;
-	int			tele_row; // future proof - incase of norm
-	int			tele_col; // future proof - incase of norm
+	int			t_row; // future proof - incase of norm
+	int			t_col; // future proof - incase of norm
 }				t_stack;
 
 typedef struct	s_room
