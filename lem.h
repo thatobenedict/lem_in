@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 15:53:53 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/25 17:32:42 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void		pop_map(t_lem *lem);
 t_room		*new_room_arr(size_t size);
 t_map		*new_map(size_t size);
 /*
-** ======================================================== create_new_arr.c
+** ======================================================== algo.c
 */
 void		teleport(t_lem *lem);
+void			if_push(t_lem *lem, int row, int col);
+void			if_pop(t_lem *lem, int row, int col);

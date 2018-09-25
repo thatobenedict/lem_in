@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 15:53:54 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/25 17:30:53 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,33 +46,18 @@ int		who_max(t_stack *array)
 /*
 ** Room in this context pertains to the matrix column from the teleport function
 */
-int		if_push(t_lem *lem, int row, int col)
+void		if_push(t_lem *lem, int row, int col)
 {
 	int i;
 
+	row = 0;
 	i = lem->route->top + 1;
 	while (--i >= 0)
 	{
 		if(lem->route->array[i] == col)
-			return (row);
+			return ;
 	}
 	push(lem->route, col);
-	return (col);
-}
-
-int		if_pop(t_lem *lem)
-{
-	if (lem->route->top == 0)
-	{
-	
-	}
-	while (--i >= 0)
-	{
-		if(lem->route->array[i] == col)
-			return (row);
-	}
-	pop(lem->route);
-	return (col);
 }
 
 void		teleport(t_lem *lem)
@@ -83,9 +68,10 @@ void		teleport(t_lem *lem)
 	push(lem->route, 0);
 	display_map(lem);
 	row = -1;
-	while (++row < lem->room_size + 2) //turned this to strictly less than
+	while (++row < lem->room_size + 2)
 	{
-		if_pop(lem->route, col); // this is where a pop would need to occur
+		if (row != 0)
+			pop(lem->route);
 		col = lem->room_size + 2;
 		row = lem->route->array[lem->route->top];
 		while (--col >= 0)
@@ -93,13 +79,17 @@ void		teleport(t_lem *lem)
 			if (lem->map->array[row][col] == 1)
 			{
 				lem->map->array[row][col] = 0;
-			//	display_map(lem);
-				row = if_push(lem, row, col);
+				if_push(lem, row, col);
+				ft_swap(&(row), &(col));
 				lem->map->array[row][col] = 0;
 				display_map(lem);
-				if (row == lem->room_size + 2)
-					exit (0);
+				col = lem->room_size + 2;
+				if (row == lem->room_size + 1)
+				{
+					push(lem->route, lem->room_size + 1);
+					return ;
+				}
 			}
 		}
-	}	
+	}
 }

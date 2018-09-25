@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 13:24:27 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/25 16:19:18 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ void	display_map(t_lem *lem)
 	j = 0;
 	k = 0;
 	r = lem->route->top;
+	ft_putstr_fd(" ", 2);
 	while (i < (lem->room_size + 2))
 	{
-		ft_putchar_fd('\t', 2);
+		ft_putstr_fd(" ", 2);
 		ft_putnbr_fd(i, 2);
 		i++;
 	}
@@ -55,7 +56,7 @@ void	display_map(t_lem *lem)
 		ft_putnbr_fd(j, 2);
 		while (k < (lem->room_size + 2))
 		{
-			ft_putchar_fd('\t', 2);
+			ft_putchar_fd(' ', 2);
 			ft_putnbr_fd(lem->map->array[j][k], 2);
 			k++;
 		}
