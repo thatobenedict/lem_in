@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 13:05:16 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:19:58 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ typedef	struct	s_lem
 	int				hold_size;
 	int				room_size;
 	int				relations_size;
+	int				flag;
 }				t_lem;
 #endif
 /*
 ** ======================================================== display.c
 */
 void		display_stack(t_stack *stack);
-void		display_map(t_lem *map);
+void		display_map(t_lem *map, int flag);
 /*
 ** ======================================================== admin.c
 */
@@ -100,6 +101,6 @@ t_map		*new_map(size_t size);
 ** ======================================================== algo.c
 */
 void		teleport(t_lem *lem);
-void			if_push(t_lem *lem, int row, int col);
-void			if_pop(t_lem *lem, int row, int col);
+void		if_push(t_lem *lem, int row, int col);
+void		if_pop(t_lem *lem, int row, int col);
 void		ant_moves(t_lem *lem);

@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 13:04:33 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:16:57 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		teleport(t_lem *lem)
 	int col;
 
 	push(lem->route, 0);
-	display_map(lem);
+	display_map(lem, lem->flag);
 	row = -1;
 	while (++row < lem->room_size + 2)
 	{
@@ -82,7 +82,7 @@ void		teleport(t_lem *lem)
 				if_push(lem, row, col);
 				ft_swap(&(row), &(col));
 				lem->map->array[row][col] = 0;
-				display_map(lem);
+				display_map(lem, lem->flag);
 				col = lem->room_size + 2;
 				if (row == lem->room_size + 1)
 				{

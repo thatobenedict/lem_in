@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 09:11:01 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/22 15:53:56 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:18:46 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void		ft_initial(t_lem *lem)
 {
 	lem->gnl.line = 0;
+	lem->flag = 0;
 }
 
 //void		dupe_err(t_lem *lem)

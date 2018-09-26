@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/25 16:19:18 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:19:28 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void	display_stack(t_stack *stack)
 	ft_putstr_fd("--\nROUTE\n", 2);
 }
 
-void	display_map(t_lem *lem)
+void	display_map(t_lem *lem, int flag)
 {
+	if (flag == 0)
+		return ;
 	int i;
 	int j;
 	int k;
@@ -72,5 +74,5 @@ void	display_map(t_lem *lem)
 		ft_putchar_fd('\n', 2);
 		j++;
 	}
-ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);
 }
