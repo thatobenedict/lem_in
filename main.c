@@ -38,6 +38,7 @@ int		main(int argc, char **argv)
 //	}
 	display_map(lem);
 	teleport(lem);
+	ant_moves(lem);
 //	ft_puttab(lem->hold);
 //	ft_putstr("\nRooms Stack\n");
 //	ft_puttab(lem->room->array);

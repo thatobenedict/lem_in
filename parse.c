@@ -40,12 +40,12 @@ void		ft_alloc_arr(t_lem *l)
 	}
 	l->hold_size++;
 }
-
+/*
 void		store_data(t_lem *l)
 {
 
 }
-
+*/
 void		parse_data(t_lem *lem)
 {
 	lem->hold_size = 0;

@@ -44,8 +44,8 @@ int		who_max(t_stack *array)
 	return (j);
 }
 /*
-** Room in this context pertains to the matrix column from the teleport function
-*/
+ ** Room in this context pertains to the matrix column from the teleport function
+ */
 void		if_push(t_lem *lem, int row, int col)
 {
 	int i;
@@ -93,3 +93,42 @@ void		teleport(t_lem *lem)
 		}
 	}
 }
+
+void		ant_moves(t_lem *lem)
+{
+	int ants;
+	int max_ants; // max ants for the particular turn
+	int rooms;
+
+	ants = 1;
+	rooms = -1;
+	max_ants = 0;
+	while (max_ants <= lem->ants)
+	{
+	max_ants++;
+	while (ants < max_ants)
+	{
+		while (++rooms < lem->route->top)
+		{
+			ft_putchar('L');
+			ft_putnbr(ants);
+			ft_putchar('-');
+			ft_putstr(lem->room->array[lem->route->array[rooms]]);
+			ft_putchar(' ');
+		}
+		ft_putchar('\n');
+		ants++;
+	}
+	}
+	ft_putchar('\n');
+}
+
+
+
+
+
+
+
+
+
+

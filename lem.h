@@ -102,3 +102,4 @@ t_map		*new_map(size_t size);
 void		teleport(t_lem *lem);
 void			if_push(t_lem *lem, int row, int col);
 void			if_pop(t_lem *lem, int row, int col);
+void		ant_moves(t_lem *lem);
