@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 13:16:57 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:25:29 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ void		ant_moves(t_lem *lem)
 		ft_putchar('\n');
 		max_ants++;
 	}
-	ft_putchar('\n');
 }
 
 
