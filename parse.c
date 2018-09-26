@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 14:46:31 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:24:16 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,80 +28,79 @@ void		ft_alloc_arr(t_lem *l)
 			dup[i] = ft_strndup(l->hold[i], ft_strlen_n(l->hold[i], ' '));
 			free(l->hold[i]);
 		}
-		dup[i++] = ft_strndup(l->gnl.line, ft_strlen_n(l->gnl.line, ' '));
+		dup[i++] = ft_strndup(l->all[l->i], ft_strlen_n(l->all[l->i], ' '));
 		dup[i] = 0;
 		l->hold = dup;
 	}
 	else
 	{
 		l->hold = (char **)malloc(sizeof(char *) * 2);
-		l->hold[0] = ft_strndup(l->gnl.line, ft_strlen_n(l->gnl.line, ' '));
+		l->hold[0] = ft_strndup(l->all[l->i], ft_strlen_n(l->all[l->i], ' '));
 		l->hold[1] = 0;
 	}
 	l->hold_size++;
 }
 
-void		ft_comment_arr(t_lem *l)
+void		ft_all_arr(t_lem *l)
 {
 	int		init_size;
 	char	**dup;
 	int		i;
 
 	i = -1;
-	init_size = l->com_size;
-	if (l->comments != NULL)
+	init_size = l->all_size;
+	if (l->all != NULL)
 	{
 		dup = (char **)malloc(sizeof(char *) * (init_size + 2));
 		while (++i < init_size)
 		{
-			dup[i] = ft_strndup(l->comments[i], ft_strlen_n(l->comments[i], ' '));
-			free(l->comments[i]);
+			dup[i] = ft_strdup(l->all[i]);
+			free(l->all[i]);
 		}
-		dup[i++] = ft_strndup(l->gnl.line, ft_strlen_n(l->gnl.line, ' '));
+		dup[i++] = ft_strdup(l->gnl.line);
 		dup[i] = 0;
-		l->comments = dup;
+		l->all = dup;
 	}
 	else
 	{
-		l->comments = (char **)malloc(sizeof(char *) * 2);
-		l->comments[0] = ft_strndup(l->gnl.line, ft_strlen_n(l->gnl.line, ' '));
-		l->comments[1] = 0;
+		l->all = (char **)malloc(sizeof(char *) * 2);
+		l->all[0] = ft_strdup(l->gnl.line);
+		l->all[1] = 0;
 	}
-	l->com_size++;
+	l->all_size++;
 }
 
 void		parse_data(t_lem *lem)
 {
-	lem->hold_size = 0;
-	get_next_line(0, &(lem->gnl.line));
-	//ant_err_admin(ps);
-	lem->ants = ft_atoi(lem->gnl.line);
+	lem->i = 0;
 	while (get_next_line(0, &(lem->gnl.line)) > 0)
+		ft_all_arr(lem);
+	lem->hold_size = 0;
+	lem->ants = ft_atoi(lem->all[lem->i]);
+	while (++lem->i < lem->all_size)
 	{
-		if (ft_strncmp(lem->gnl.line, "##start", 7) == 0)
+		if (ft_strncmp(lem->all[lem->i], "##start", 7) == 0)
 		{
-			get_next_line(0, &(lem->gnl.line));
-			lem->start = ft_strsub(lem->gnl.line, 0,
-					ft_strlen_n(lem->gnl.line, ' '));
+			lem->i++;
+			lem->start = ft_strsub(lem->all[lem->i], 0,
+					ft_strlen_n(lem->all[lem->i], ' '));
 		}
-		else if (ft_strncmp(lem->gnl.line, "##end", 5) == 0)
+		else if (ft_strncmp(lem->all[lem->i], "##end", 5) == 0)
 		{
-			get_next_line(0, &(lem->gnl.line));
-			lem->end = ft_strsub(lem->gnl.line, 0,
-					ft_strlen_n(lem->gnl.line, ' '));
+			lem->i++;
+			lem->end = ft_strsub(lem->all[lem->i], 0,
+					ft_strlen_n(lem->all[lem->i], ' '));
 		}
-		else if (ft_contain_char(lem->gnl.line, '-') == 1)
+		else if (ft_contain_char(lem->all[lem->i], '-') == 1)
 		{
 			ft_alloc_arr(lem);
 			lem->relations_size++;
 		}
-		else if (ft_contain_char(lem->gnl.line, '#') == 0)
+		else if (ft_contain_char(lem->all[lem->i], '#') == 0)
 		{
 			ft_alloc_arr(lem);
 			lem->room_size++;
 		}
-		else
-			ft_comment_arr(lem);
 	}
 }
 

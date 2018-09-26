@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 14:45:56 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:20:56 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,7 @@ int		main(int argc, char **argv)
 			else
 				exit(0);
 		}
-		ft_putnbr(lem->ants);
-		ft_putchar('\n');
-		ft_putendl(lem->start);
-		ft_putendl(lem->end);
-		ft_puttab(lem->hold);
-		ft_puttab(lem->comments);
+		ft_puttab(lem->all);
 		display_map(lem, lem->flag);
 		teleport(lem);
 		ant_moves(lem);

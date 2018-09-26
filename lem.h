@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 14:46:32 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:24:18 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,9 @@ typedef	struct	s_lem
 	int			hold_size;
 	int			room_size;
 	int			relations_size;
-	char		**comments;
-	int			com_size;
+	char		**all;
+	int			all_size;
+	int			i;
 	int			flag;
 }				t_lem;
 /*
@@ -85,7 +86,7 @@ int				pop(t_stack *lem);
 ** ======================================================== parse.c
 */
 void			ft_alloc_arr(t_lem *l);
-void			ft_comment_arr(t_lem *l);
+void			ft_all_arr(t_lem *l);
 void			store_data(t_lem *lem);
 void			parse_data(t_lem *lem);
 void			room_stack(t_lem *lem);
