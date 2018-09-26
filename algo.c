@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/25 17:30:53 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 13:04:33 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,23 +102,20 @@ void		ant_moves(t_lem *lem)
 
 	ants = 1;
 	rooms = -1;
-	max_ants = 0;
+	max_ants = 1;
 	while (max_ants <= lem->ants)
 	{
-	max_ants++;
-	while (ants < max_ants)
-	{
-		while (++rooms < lem->route->top)
+		rooms = -1;
+		while (++rooms <= lem->route->top)
 		{
 			ft_putchar('L');
-			ft_putnbr(ants);
+			ft_putnbr(max_ants);
 			ft_putchar('-');
 			ft_putstr(lem->room->array[lem->route->array[rooms]]);
 			ft_putchar(' ');
 		}
 		ft_putchar('\n');
-		ants++;
-	}
+		max_ants++;
 	}
 	ft_putchar('\n');
 }
