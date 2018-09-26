@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 15:20:56 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 18:37:51 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		main(int argc, char **argv)
 		lem->ac = argc;
 		lem->av = argv;
 		parse_data(lem);
+		no_start_end(lem);
 		room_stack(lem);
 		relations_stack(lem);
 		pop_map(lem);
@@ -34,8 +35,11 @@ int		main(int argc, char **argv)
 			else
 				exit(0);
 		}
-		ft_puttab(lem->all);
-		display_map(lem, lem->flag);
+	//	ft_puttab(lem->all);
+	//	ft_putchar('\n');
+	//	display_map(lem, lem->flag);
+		ft_puttab(lem->room->array); //
+		ft_puttab(lem->relations->array); //
 		teleport(lem);
 		ant_moves(lem);
 	}

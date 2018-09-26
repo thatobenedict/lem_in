@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 15:24:16 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 18:37:53 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void	room_stack(t_lem *lem)
 	lem->room->array[lem->room->size - 2] = ft_strdup(lem->end);
 	lem->room->array[lem->room->size - 1] = 0;
 	lem->map = new_map(lem->room_size + 2);
+	duplicate_rooms(lem);
 }
 
 void	relations_stack(t_lem *lem)

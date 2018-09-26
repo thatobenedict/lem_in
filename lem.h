@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 15:24:18 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 18:37:47 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,9 @@ void			teleport(t_lem *lem);
 void			if_push(t_lem *lem, int row, int col);
 void			if_pop(t_lem *lem, int row, int col);
 void			ant_moves(t_lem *lem);
+/*
+** ======================================================== algo.c
+*/
+void			duplicate_rooms(t_lem *lem);
+void			no_start_end(t_lem *lem);
 #endif

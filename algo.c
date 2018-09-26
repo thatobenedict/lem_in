@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 13:25:29 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/26 15:37:39 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,8 @@ void		ant_moves(t_lem *lem)
 			ft_putnbr(max_ants);
 			ft_putchar('-');
 			ft_putstr(lem->room->array[lem->route->array[rooms]]);
-			ft_putchar(' ');
+			ft_putchar('\n');
 		}
-		ft_putchar('\n');
 		max_ants++;
 	}
 }
