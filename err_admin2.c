@@ -15,5 +15,5 @@
 void	duplicate_paths(int room1, int room2, t_lem *lem)
 {
 	if (lem->map->array[room1][room2] == 1)
-		exit(0);
+		err_message(5);
 }

@@ -76,3 +76,37 @@ void	display_map(t_lem *lem, int flag)
 	}
 	ft_putchar_fd('\n', 2);
 }
+
+void	err_message(int i)
+{
+	if (i == 0)
+	{
+		ft_putendl("Error: Duplicate Rooms Declared");
+		exit(0);
+	}
+	else if (i == 1)
+	{
+		ft_putendl("Error: No Start or End Room Declared");
+		exit(0);
+	}
+	else if (i == 2)
+	{
+		ft_putendl("Error: Linked Room Not Declared");
+		exit(0);
+	}
+	else if (i == 3)
+	{
+		ft_putendl("Error: Ant Data Invalid");
+		exit(0);
+	}
+	else if (i == 4)
+	{
+		ft_putendl("Error: No Path Possible");
+		exit(0);
+	}
+	else if (i == 5)
+	{
+		ft_putendl("Error: Duplicate Paths Declared");
+		exit(0);
+	}
+}

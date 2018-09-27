@@ -67,6 +67,7 @@ typedef	struct	s_lem
 */
 void			display_stack(t_stack *stack);
 void			display_map(t_lem *map, int flag);
+void			err_message(int i);
 /*
 ** ======================================================== admin.c
 */
