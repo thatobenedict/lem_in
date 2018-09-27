@@ -18,6 +18,8 @@ void		ft_initial(t_lem *lem)
 	lem->flag = 0;
 	lem->i = 0;
 	lem->hold_size = 0;
+	lem->relations_size = 0;
+	lem->room_size = 0;
 }
 
 int			ret_index(char *name, t_room *room)

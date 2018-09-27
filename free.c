@@ -43,7 +43,7 @@ void		relieve_yourself(t_lem *lem)
 		ft_memdel((void **)&lem->room);
 	}
 }
-
+/*
 void			swapnfree(char **var, char *new_val)
 {
 	char	*tmp;
@@ -51,4 +51,4 @@ void			swapnfree(char **var, char *new_val)
 	free(*var);
 	tmp = new_val;
 	*var = tmp;
-}
+}*/
