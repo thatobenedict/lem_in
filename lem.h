@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 15:30:26 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/27 18:18:21 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,4 +116,9 @@ void			no_path(t_lem *lem);
 ** ======================================================== err_admin2.c
 */
 void			duplicate_paths(int room1, int room2, t_lem *lem);
+/*
+** ======================================================== free.c
+*/
+void			relieve_yourself(t_lem *lem);
+void			swapnfree(char **var, char *new_val);
 #endif

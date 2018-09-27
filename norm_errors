@@ -1,0 +1,113 @@
+e4r20p4% find . -name "*.c" -exec norminette {} \;
+Norme: ./admin.c
+Error (line 37): declarations in one_or_zero are bad aligned
+Norme: ./algo.c
+Error (line 18): bad spacing before if_push
+Error (line 32): function teleport has 27 lines
+Norme: ./create.c
+Norme: ./create_arrays.c
+Error (line 26): declarations in new_map are bad aligned
+Error (line 26): declarations in new_map must be at the top of the function
+Error (line 26): declarations must be followed by one empty line in new_map
+Error (line 30, col 5): i is instanciated during declaration
+Error (line 36, col 16): missing space around =
+Norme: ./display.c
+Error (line 34): function display_map has 42 lines
+Error (line 34): declarations in display_map must be at the top of the function
+Norme: ./err_admin.c
+Error (line 29, col 9): Spacing after call to exit
+Error (line 48, col 7): Spacing after call to exit
+Error (line 65, col 7): Spacing after call to exit
+Error (line 106, col 7): Spacing after call to exit
+Norme: ./err_admin2.c
+Norme: ./free.c
+Error (line 15): function relieve_yourself has 28 lines
+Error (line 39): bad indentation
+Error (line 40): bad indentation
+Error (line 41): bad indentation
+Error (line 42): bad indentation
+Norme: ./get_next_line/get_next_line.c
+Norme: ./get_next_line/libft/ft_abs.c
+Norme: ./get_next_line/libft/ft_absdiff.c
+Norme: ./get_next_line/libft/ft_atoi.c
+Norme: ./get_next_line/libft/ft_atol.c
+Norme: ./get_next_line/libft/ft_bzero.c
+Norme: ./get_next_line/libft/ft_contain_char.c
+Norme: ./get_next_line/libft/ft_contain_char_col.c
+Norme: ./get_next_line/libft/ft_isalnum.c
+Norme: ./get_next_line/libft/ft_isalpha.c
+Norme: ./get_next_line/libft/ft_isascii.c
+Norme: ./get_next_line/libft/ft_isdigit.c
+Norme: ./get_next_line/libft/ft_isempty.c
+Norme: ./get_next_line/libft/ft_ismax.c
+Norme: ./get_next_line/libft/ft_ismin.c
+Norme: ./get_next_line/libft/ft_isnumber.c
+Norme: ./get_next_line/libft/ft_isprint.c
+Norme: ./get_next_line/libft/ft_itoa.c
+Norme: ./get_next_line/libft/ft_memalloc.c
+Norme: ./get_next_line/libft/ft_memccpy.c
+Norme: ./get_next_line/libft/ft_memchr.c
+Norme: ./get_next_line/libft/ft_memcmp.c
+Norme: ./get_next_line/libft/ft_memcpy.c
+Norme: ./get_next_line/libft/ft_memdel.c
+Norme: ./get_next_line/libft/ft_memmove.c
+Norme: ./get_next_line/libft/ft_memset.c
+Norme: ./get_next_line/libft/ft_putchar.c
+Norme: ./get_next_line/libft/ft_putchar_fd.c
+Norme: ./get_next_line/libft/ft_putendl.c
+Norme: ./get_next_line/libft/ft_putendl_fd.c
+Norme: ./get_next_line/libft/ft_putnbr.c
+Norme: ./get_next_line/libft/ft_putnbr_fd.c
+Norme: ./get_next_line/libft/ft_putstr.c
+Norme: ./get_next_line/libft/ft_putstr_fd.c
+Norme: ./get_next_line/libft/ft_puttab.c
+Norme: ./get_next_line/libft/ft_puttab_fd.c
+Norme: ./get_next_line/libft/ft_strcat.c
+Norme: ./get_next_line/libft/ft_strchr.c
+Norme: ./get_next_line/libft/ft_strclr.c
+Norme: ./get_next_line/libft/ft_strcmp.c
+Norme: ./get_next_line/libft/ft_strcpy.c
+Norme: ./get_next_line/libft/ft_strdel.c
+Norme: ./get_next_line/libft/ft_strdup.c
+Norme: ./get_next_line/libft/ft_strequ.c
+Norme: ./get_next_line/libft/ft_striter.c
+Norme: ./get_next_line/libft/ft_striteri.c
+Norme: ./get_next_line/libft/ft_strjoin.c
+Norme: ./get_next_line/libft/ft_strlcat.c
+Norme: ./get_next_line/libft/ft_strlen.c
+Norme: ./get_next_line/libft/ft_strlen_n.c
+Norme: ./get_next_line/libft/ft_strmap.c
+Norme: ./get_next_line/libft/ft_strmapi.c
+Norme: ./get_next_line/libft/ft_strncat.c
+Norme: ./get_next_line/libft/ft_strncmp.c
+Norme: ./get_next_line/libft/ft_strncpy.c
+Norme: ./get_next_line/libft/ft_strndup.c
+Norme: ./get_next_line/libft/ft_strnequ.c
+Norme: ./get_next_line/libft/ft_strnew.c
+Norme: ./get_next_line/libft/ft_strnjoin.c
+Norme: ./get_next_line/libft/ft_strnstr.c
+Norme: ./get_next_line/libft/ft_strrchr.c
+Norme: ./get_next_line/libft/ft_strrev.c
+Norme: ./get_next_line/libft/ft_strsplit.c
+Norme: ./get_next_line/libft/ft_strsplit_word.c
+Norme: ./get_next_line/libft/ft_strstr.c
+Norme: ./get_next_line/libft/ft_strstr_io.c
+Norme: ./get_next_line/libft/ft_strsub.c
+Norme: ./get_next_line/libft/ft_strtrim.c
+Norme: ./get_next_line/libft/ft_swap.c
+Norme: ./get_next_line/libft/ft_tolower.c
+Norme: ./get_next_line/libft/ft_toupper.c
+Norme: ./get_next_line/libft/ft_white_word_count.c
+Norme: ./get_next_line/libft/ft_whitespace.c
+Norme: ./get_next_line/libft/is_between.c
+Norme: ./main.c
+Error (line 15): function main has 32 lines
+Error (line 15): declarations in main must be at the top of the function
+Error (line 21, col 6): missing space around =
+Error (line 47, col 6): Spacing after call to exit
+Norme: ./parse.c
+Error: global scope bad aligned
+Error: 7 functions in the file
+Error (line 83): function parse_data has 26 lines
+Error (line 141): declarations in pop_map must be at the top of the function
+Error (line 152): bad indentation
