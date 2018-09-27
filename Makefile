@@ -6,14 +6,14 @@
 #    By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/18 18:18:38 by tbenedic          #+#    #+#              #
-#    Updated: 2018/09/26 17:02:21 by tbenedic         ###   ########.fr        #
+#    Updated: 2018/09/27 15:49:00 by tbenedic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = lem-in
 
 SRC = $(addsuffix .c, $(FUNC))
-FUNC = admin create create_arrays display main parse algo err_admin\
+FUNC = admin create create_arrays display main parse algo err_admin err_admin2 \
 	   get_next_line/get_next_line
 LIBFT = get_next_line/libft/libft.a
 HEAD  = lem.h
@@ -25,7 +25,7 @@ $(NAME):
 	gcc -Wall -Werror -Wextra $(SRC) $(LIBFT) -o $(NAME)
 
 local:
-	gcc -Wall -Werror -Wextra $(SRC) $(LIBFT) -o $(NAME)
+	gcc -g -Wall -Werror -Wextra $(SRC) $(LIBFT) -o $(NAME)
 
 clean: libclean
 

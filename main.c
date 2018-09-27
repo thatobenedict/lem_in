@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:03:02 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 18:37:51 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/27 16:08:49 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int		main(int argc, char **argv)
 		ft_initial(lem);
 		lem->ac = argc;
 		lem->av = argv;
+		store_data(lem);
 		parse_data(lem);
+		no_ants(lem);
 		no_start_end(lem);
 		room_stack(lem);
 		relations_stack(lem);
 		pop_map(lem);
-		lem->route = new_stack(lem->room_size - 1);
+		lem->route = new_stack(lem->room_size);
 		if (argc > 1)
 		{
 			if (ft_strcmp(argv[1], "-v") == 0)
@@ -35,11 +37,9 @@ int		main(int argc, char **argv)
 			else
 				exit(0);
 		}
-	//	ft_puttab(lem->all);
-	//	ft_putchar('\n');
-	//	display_map(lem, lem->flag);
-		ft_puttab(lem->room->array); //
-		ft_puttab(lem->relations->array); //
+		ft_puttab(lem->all);
+		ft_putchar('\n');
+		display_map(lem, lem->flag);
 		teleport(lem);
 		ant_moves(lem);
 	}

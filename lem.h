@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 11:02:49 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 18:37:47 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/27 15:30:26 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,15 @@ void			if_push(t_lem *lem, int row, int col);
 void			if_pop(t_lem *lem, int row, int col);
 void			ant_moves(t_lem *lem);
 /*
-** ======================================================== algo.c
+** ======================================================== err_admin.c
 */
 void			duplicate_rooms(t_lem *lem);
 void			no_start_end(t_lem *lem);
+void			no_room(char *room1, char *room2, t_lem *lem);
+void			no_ants(t_lem *lem);
+void			no_path(t_lem *lem);
+/*
+** ======================================================== err_admin2.c
+*/
+void			duplicate_paths(int room1, int room2, t_lem *lem);
 #endif

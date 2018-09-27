@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 18:37:53 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/27 12:41:43 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,18 @@ void		ft_all_arr(t_lem *l)
 	l->all_size++;
 }
 
-void		parse_data(t_lem *lem)
+void		store_data(t_lem *lem)
 {
-	lem->i = 0;
+	int i;
+
+	i = 0;
 	while (get_next_line(0, &(lem->gnl.line)) > 0)
 		ft_all_arr(lem);
-	lem->hold_size = 0;
+	no_path(lem);
+}
+
+void		parse_data(t_lem *lem)
+{
 	lem->ants = ft_atoi(lem->all[lem->i]);
 	while (++lem->i < lem->all_size)
 	{

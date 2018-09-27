@@ -6,46 +6,15 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 15:37:39 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/27 16:08:54 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem.h"
 
-int		who_min(t_stack *array)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = array->array[0];
-	while (i <= array->top)
-	{
-		if (j > array->array[i])
-			j = array->array[i];
-		i++;
-	}
-	return (j);
-}
-
-int		who_max(t_stack *array)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = array->array[0];
-	while (i <= array->top)
-	{
-		if (j < array->array[i])
-			j = array->array[i];
-		i++;
-	}
-	return (j);
-}
 /*
- ** Room in this context pertains to the matrix column from the teleport function
- */
+** Room in this context pertains to the matrix column from the teleport function
+*/
 void		if_push(t_lem *lem, int row, int col)
 {
 	int i;
@@ -54,7 +23,7 @@ void		if_push(t_lem *lem, int row, int col)
 	i = lem->route->top + 1;
 	while (--i >= 0)
 	{
-		if(lem->route->array[i] == col)
+		if (lem->route->array[i] == col)
 			return ;
 	}
 	push(lem->route, col);
@@ -85,10 +54,7 @@ void		teleport(t_lem *lem)
 				display_map(lem, lem->flag);
 				col = lem->room_size + 2;
 				if (row == lem->room_size + 1)
-				{
-					push(lem->route, lem->room_size + 1);
 					return ;
-				}
 			}
 		}
 	}
@@ -97,7 +63,7 @@ void		teleport(t_lem *lem)
 void		ant_moves(t_lem *lem)
 {
 	int ants;
-	int max_ants; // max ants for the particular turn
+	int max_ants;
 	int rooms;
 
 	ants = 1;
@@ -117,13 +83,3 @@ void		ant_moves(t_lem *lem)
 		max_ants++;
 	}
 }
-
-
-
-
-
-
-
-
-
-
