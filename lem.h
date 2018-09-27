@@ -120,5 +120,5 @@ void			duplicate_paths(int room1, int room2, t_lem *lem);
 ** ======================================================== free.c
 */
 void			relieve_yourself(t_lem *lem);
-void			swapnfree(char **var, char *new_val);
+//void			swapnfree(char **var, char *new_val);
 #endif

@@ -38,15 +38,6 @@ static char		*ft_remainder(char *line)
 	return (new);
 }
 
-void			swapnfree(char **var, char *new_val)
-{
-	char	*tmp;
-
-	free(*var);
-	tmp = new_val;
-	*var = tmp;
-}
-
 int				get_next_line(const int fd, char **line)
 {
 	char		buf[BUFF_SIZE + 1];

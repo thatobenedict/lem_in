@@ -98,4 +98,5 @@ int					ft_absdiff(int a, int b);
 int					is_between(int a, int b, int c);
 int					ft_isempty(char *s);
 int					ft_strlen_n(const char *s, int n);
+void            		swapnfree(char **var, char *new_val);
 #endif
