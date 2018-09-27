@@ -131,11 +131,15 @@ void	relations_stack(t_lem *lem)
 	int j;
 
 	i = lem->room_size;
-	j = -1;
+	j = 0;
 	lem->relations = new_room_arr(lem->relations_size + 1);
-	while (++j < lem->relations_size)
-		lem->relations->array[j] = ft_strdup(lem->hold[i++]);
-	lem->relations->array[lem->relations_size + 1] = 0;
+	while (j < lem->relations_size)
+		{
+			lem->relations->array[j] = ft_strdup(lem->hold[i]);
+			j++;
+			i++;
+		}
+	lem->relations->array[lem->relations_size] = 0;
 }
 
 void	pop_map(t_lem *lem)

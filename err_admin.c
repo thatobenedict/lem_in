@@ -57,12 +57,15 @@ void	no_room(char *room1, char *room2, t_lem *lem)
 	j = 0;
 	while (++i < lem->room_size + 2)
 	{
-		if (ft_strcmp(room1, lem->room->array[i]) == 0 ||
-				ft_strcmp(room2, lem->room->array[i]) == 0)
+		if (ft_strcmp(room1, lem->room->array[i]) == 0)
+			j++;
+		if (ft_strcmp(room2, lem->room->array[i]) == 0)
 			j++;
 	}
 	if (j < 2)
+{
 		err_message(2);
+}
 }
 
 void	no_ants(t_lem *lem)
