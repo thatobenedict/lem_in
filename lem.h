@@ -117,4 +117,5 @@ void			no_path(t_lem *lem);
 ** ======================================================== err_admin2.c
 */
 void			duplicate_paths(int room1, int room2, t_lem *lem);
+void			loop(t_lem *lem);
 #endif

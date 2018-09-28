@@ -29,6 +29,7 @@ int		main(int argc, char **argv)
 		room_stack(lem);
 		relations_stack(lem);
 		pop_map(lem);
+		loop(lem);
 		lem->route = new_stack(lem->room_size + 2);
 		if (argc > 1)
 		{
