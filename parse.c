@@ -80,6 +80,22 @@ void		store_data(t_lem *lem)
 	no_path(lem);
 }
 
+void		comment_skip(t_lem *lem)
+{
+	int i;
+
+	i = 0;
+	lem->i++;
+	while (++i < 100000)
+	{
+		if (lem->all[lem->i][0] == '#')
+			lem->i++;
+		else
+			break ;
+	}	
+	ft_putendl(lem->start);
+}
+
 void		parse_data(t_lem *lem)
 {
 	lem->ants = ft_atoi(lem->all[lem->i]);
@@ -87,6 +103,7 @@ void		parse_data(t_lem *lem)
 	{
 		if (ft_strncmp(lem->all[lem->i], "##start", 7) == 0)
 		{
+		//	comment_skip(lem);
 			lem->i++;
 			lem->start = ft_strsub(lem->all[lem->i], 0,
 					ft_strlen_n(lem->all[lem->i], ' '));
@@ -102,7 +119,7 @@ void		parse_data(t_lem *lem)
 			ft_alloc_arr(lem);
 			lem->relations_size++;
 		}
-		else if (ft_white_word_count(lem->all[lem->i]) == 3)//ft_contain_char(lem->all[lem->i], '#') == 0)
+		else if (ft_white_word_count(lem->all[lem->i]) == 3)
 		{
 			ft_alloc_arr(lem);
 			lem->room_size++;
