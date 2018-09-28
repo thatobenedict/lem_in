@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 09:11:01 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 12:54:27 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 08:34:26 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int			ret_index(char *name, t_room *room)
 
 void		one_or_zero(t_lem *l)
 {
-	int i;
-	char *room_char1;
-	char *room_char2;
-	int	room1_int;
-	int	room2_int;
+	int		i;
+	char	*room_char1;
+	char	*room_char2;
+	int		room1_int;
+	int		room2_int;
 
 	i = -1;
 	while (++i < (l->relations_size))

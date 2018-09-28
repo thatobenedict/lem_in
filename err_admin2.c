@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/27 12:40:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 12:47:31 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 09:33:22 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,24 @@ void	loop(t_lem *lem)
 	int count;
 	int first;
 	int end;
-	
-	i = 0;
+
+	i = -1;
 	count = 0;
 	first = 0;
 	end = lem->room->size - 2;
-	while (i <= end)
+	while (++i <= end)
 	{
 		if (lem->map->array[end][i] == 1)
 			count++;
-		i++;
 	}
 	if (count == 0)
 		err_message(4);
 	count = 0;
-	while (i >= 0)
+	while (--i >= -1)
 	{
 		if (lem->map->array[first][i] == 1)
 			count++;
-		i--;
 	}
 	if (count == 0)
 		err_message(4);
-
 }

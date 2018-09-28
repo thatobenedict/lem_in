@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/20 16:31:46 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 16:08:54 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 08:40:43 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** Room in this context pertains to the matrix column from the teleport function
 */
+
 void		if_push(t_lem *lem, int row, int col)
 {
 	int i;
@@ -29,14 +30,19 @@ void		if_push(t_lem *lem, int row, int col)
 	push(lem->route, col);
 }
 
+int			teleport_helper(t_lem *lem)
+{
+	push(lem->route, 0);
+	display_map(lem, lem->flag);
+	return (-1);
+}
+
 void		teleport(t_lem *lem)
 {
 	int row;
 	int col;
 
-	push(lem->route, 0);
-	display_map(lem, lem->flag);
-	row = -1;
+	row = teleport_helper(lem);
 	while (++row < lem->room_size + 2)
 	{
 		if (row != 0)

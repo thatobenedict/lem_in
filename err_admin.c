@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 16:00:24 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 12:43:37 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 09:27:53 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	duplicate_rooms(t_lem *lem)
 			if (ft_strcmp(lem->room->array[i], lem->room->array[j]) != 0)
 				j++;
 			else
-					err_message(0);
+				err_message(0);
 		}
 	}
 }
@@ -63,9 +63,9 @@ void	no_room(char *room1, char *room2, t_lem *lem)
 			j++;
 	}
 	if (j < 2)
-{
+	{
 		err_message(2);
-}
+	}
 }
 
 void	no_ants(t_lem *lem)
@@ -78,19 +78,19 @@ void	no_ants(t_lem *lem)
 		if ((lem->all[0][j] == '+' || lem->all[0][j] == '-'))
 		{
 			if (ft_isdigit(lem->all[0][++j]) == 0)
-				err_message(3);;
+				err_message(3);
 		}
 		else
 		{
 			if (ft_isdigit(lem->all[0][j]) == 0)
-				err_message(3);;
+				err_message(3);
 		}
 	}
 	if (ft_atol(lem->all[0]) < -2147483648 ||
 			ft_atol(lem->all[0]) > 2147483647)
-				err_message(3);;
+		err_message(3);
 	if (ft_atoi(lem->all[0]) <= 0)
-				err_message(3);;
+		err_message(3);
 }
 
 void	no_path(t_lem *lem)

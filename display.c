@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 08:54:52 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/26 13:26:03 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 09:25:42 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,8 @@ void	display_stack(t_stack *stack)
 	ft_putstr_fd("--\nROUTE\n", 2);
 }
 
-void	display_map(t_lem *lem, int flag)
+void	display_map_helper(t_lem *lem, int j, int k, int r)
 {
-	if (flag == 0)
-		return ;
-	int i;
-	int j;
-	int k;
-	int r;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	r = lem->route->top;
-	ft_putstr_fd(" ", 2);
-	while (i < (lem->room_size + 2))
-	{
-		ft_putstr_fd(" ", 2);
-		ft_putnbr_fd(i, 2);
-		i++;
-	}
-	ft_putchar_fd('\n', 2);
 	while (j < (lem->room_size + 2))
 	{
 		k = 0;
@@ -77,6 +58,49 @@ void	display_map(t_lem *lem, int flag)
 	ft_putchar_fd('\n', 2);
 }
 
+void	display_map(t_lem *lem, int flag)
+{
+	int i;
+	int j;
+	int k;
+	int r;
+
+	if (flag == 0)
+		return ;
+	i = 0;
+	j = 0;
+	k = 0;
+	r = lem->route->top;
+	ft_putstr_fd(" ", 2);
+	while (i < (lem->room_size + 2))
+	{
+		ft_putstr_fd(" ", 2);
+		ft_putnbr_fd(i, 2);
+		i++;
+	}
+	ft_putchar_fd('\n', 2);
+	display_map_helper(lem, j, k, r);
+}
+
+void	err_message_helper(int i)
+{
+	if (i == 4)
+	{
+		ft_putendl("Error: No Path Possible");
+		exit(0);
+	}
+	else if (i == 5)
+	{
+		ft_putendl("Error: Duplicate Paths Declared");
+		exit(0);
+	}
+	else if (i == 6)
+	{
+		ft_putendl("Error: Invalid Map");
+		exit(0);
+	}
+}
+
 void	err_message(int i)
 {
 	if (i == 0)
@@ -99,21 +123,6 @@ void	err_message(int i)
 		ft_putendl("Error: Ant Data Invalid");
 		exit(0);
 	}
-	else if (i == 4)
-	{
-		ft_putendl("Error: No Path Possible");
-		exit(0);
-	}
-	else if (i == 5)
-	{
-		ft_putendl("Error: Duplicate Paths Declared");
-		exit(0);
-	}
-	else if (i == 6)
-	{
-		ft_putendl("Error: Invalid Map");
-		exit(0);
-	}
-
-	
+	else
+		err_message_helper(i);
 }
