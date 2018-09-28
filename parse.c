@@ -6,7 +6,7 @@
 /*   By: tbenedic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 07:15:04 by tbenedic          #+#    #+#             */
-/*   Updated: 2018/09/27 12:41:43 by tbenedic         ###   ########.fr       */
+/*   Updated: 2018/09/28 08:30:25 by tbenedic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,22 +80,6 @@ void		store_data(t_lem *lem)
 	no_path(lem);
 }
 
-void		comment_skip(t_lem *lem)
-{
-	int i;
-
-	i = 0;
-	lem->i++;
-	while (++i < 100000)
-	{
-		if (lem->all[lem->i][0] == '#')
-			lem->i++;
-		else
-			break ;
-	}	
-	ft_putendl(lem->start);
-}
-
 void		parse_data(t_lem *lem)
 {
 	lem->ants = ft_atoi(lem->all[lem->i]);
@@ -103,7 +87,6 @@ void		parse_data(t_lem *lem)
 	{
 		if (ft_strncmp(lem->all[lem->i], "##start", 7) == 0)
 		{
-		//	comment_skip(lem);
 			lem->i++;
 			lem->start = ft_strsub(lem->all[lem->i], 0,
 					ft_strlen_n(lem->all[lem->i], ' '));
