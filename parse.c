@@ -102,11 +102,13 @@ void		parse_data(t_lem *lem)
 			ft_alloc_arr(lem);
 			lem->relations_size++;
 		}
-		else if (ft_contain_char(lem->all[lem->i], '#') == 0)
+		else if (ft_white_word_count(lem->all[lem->i]) == 3)//ft_contain_char(lem->all[lem->i], '#') == 0)
 		{
 			ft_alloc_arr(lem);
 			lem->room_size++;
 		}
+		else
+			err_message(6);
 	}
 }
 

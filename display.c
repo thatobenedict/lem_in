@@ -109,4 +109,11 @@ void	err_message(int i)
 		ft_putendl("Error: Duplicate Paths Declared");
 		exit(0);
 	}
+	else if (i == 6)
+	{
+		ft_putendl("Error: Invalid Map");
+		exit(0);
+	}
+
+	
 }
