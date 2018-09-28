@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 		room_stack(lem);
 		relations_stack(lem);
 		pop_map(lem);
-		lem->route = new_stack(lem->room_size);
+		lem->route = new_stack(lem->room_size + 2);
 		if (argc > 1)
 		{
 			if (ft_strcmp(argv[1], "-v") == 0)
